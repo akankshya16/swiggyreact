@@ -44,7 +44,7 @@ const data= {
                                                 "Snacks",
                                                 "Fast Food"
                                             ],
-                                            "avgRating": 4.5,
+                                            "avgRating": 2.5,
                                             "parentId": "474522",
                                             "avgRatingString": "4.5",
                                             "totalRatingsString": "1.0K+",

@@ -24,3 +24,52 @@
   font-weight: bold; /* Makes text bold */
 }
 
+.filterbutton {
+  padding: 6px;
+  margin: 6px;
+  background-color: rgb(223, 247, 223);
+  border-radius: 10px; /* Makes the corners rounded */
+  border: 2px black; 
+  position: relative;
+  left: -9px; /* Moves the button slightly to the left */
+}
+
+
+.resetbutton{
+  padding: 5px;
+  margin: 6px;
+  background-color: rgb(223, 247, 223);
+  border-radius: 10px; /* Makes the corners rounded */
+  border: 2px black; 
+  position: relative;
+  left: -9px; 
+}
+
+/* Container that holds all the cards */
+.Rest_container {
+  display: flex;
+  flex-wrap: wrap;  /* Ensures wrapping when screen is small */
+  gap: 20px; /* Creates spacing between cards */
+  justify-content: center; /* Centers items horizontally */
+  align-items: flex-start; /* Aligns cards from the top */
+  padding: 20px;
+}
+
+/* The outer wrapper for each card */
+.restaurantCard {
+  display: flex; /* Allows the card to behave as a flex item */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Actual card styling */
+.card {
+  width: 200px;
+ 
+  padding: 40px;
+  background-color: bisque;
+  margin: 10px; /* Reduce margin to avoid unwanted spacing */
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}

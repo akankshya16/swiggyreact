@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import response from "../swiggyresponse";
 import Cards from "../components/Cards";
-
+import Filter from "../components/Filter";
 const Restaurants = () => {
   const [data, setdata] = useState([]);
 
@@ -14,16 +14,22 @@ const Restaurants = () => {
   }, []);
 
   return (
-    <div>
+    <div className="main-container">
+      {/* Filters Section */}
+      <div className="filters-container">
+        <Filter resdata={data} />
+      </div>
+
+      {/* Cards Section */}
       <div className="Rest_container">
-        {data == null ? (
-          <h1>Loading</h1>
+        {data.length === 0 ? (
+          <h1>Loading...</h1>
         ) : (
-          data.map((rest) => (
-            <div className="restuarentcard" key={rest?.info?.id}>
-              <Cards res={rest?.info} />
-            </div>
-          ))
+          <>
+            {data.map((rest) => (
+              <Cards key={rest?.info?.id} res={rest?.info} />
+            ))}
+          </>
         )}
       </div>
     </div>
