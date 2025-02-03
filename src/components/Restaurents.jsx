@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
-import response from "../swiggyresponse";
+// import response from "../swiggyresponse";
+import swiggyresponse from "../swiggyresponse"
 import Cards from "../components/Cards";
 import Filter from "../components/Filter";
 const Restaurants = () => {
   const [data, setdata] = useState([]);
-
-  useEffect(() => {
+  const getResponse=async()=>{
+    const response = await swiggyresponse()
     const restaurants =
-      response?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants || [];
+      response?.data?.restaurants || [];
 
     setdata(restaurants);
+  }
+  useEffect(() => {
+    getResponse()
+   
   }, []);
 
   return (

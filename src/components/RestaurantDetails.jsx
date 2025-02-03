@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import cardsresponse from "../components/cardsresponse"; // Importing the data
 
+
+
+
 const RestaurantDetails = () => {
   const [menuCards, setMenuCards] = useState([]);
 
@@ -12,12 +15,14 @@ const RestaurantDetails = () => {
         const cardDetails = card.card.card;
         return {
           title: cardDetails.title, // The card title (e.g., "Top Picks")
-          items:
-            cardDetails.itemCards?.map((item) => ({
-              name: item.name,
-              price: item.price,
-              description: item.description || "No description available",
-            })) || [],
+          Dishes: cardDetails?.categories,
+          items: cardDetails.itemCards
+            ? cardDetails.itemCards.map((item) => ({
+                name: item.name,
+                price: item.price,
+                description: item.description || "No description available",
+              }))
+            : [], // If itemCards is undefined, set an empty array
         };
       });
 
